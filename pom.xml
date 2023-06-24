@@ -22,7 +22,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http:54.175.245.26:9000/</sonar.host.url>
+		<sonar.host.url>http:3.83.116.12:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Searise Technologies Releases Nexus Repository</name>
-	      <url>http://44.197.228.68:8081/repository/LexusProject-Releases/</url>
+	      <url>http://3.80.120.67:8081/repository/mercedes-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Searise Technologies Snapshot Nexus Repository </name>
-	      <url>http://44.197.228.68:8081/repository/LexusProject-Snapshot/</url>
+	      <url>http://3.80.120.67:8081/repository/mercedes-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
