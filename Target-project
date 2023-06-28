@@ -11,15 +11,15 @@ node{
  }
   stage('4UploadArtifacts'){
    sh "${mavenHome}/bin/mvn deploy"
- }
+  }
    stage('7deploy2Prod'){
      deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://52.207.246.99:1978/')], contextPath: null, war: 'target/*war'
- }
+  }
  stage('6Manualapproval'){
     sh "echo 'ready for review' "
     timeout(time:5, unit:'HOURS') {
     input message: 'Application ready for deployment, Please review and approve'
-      }
+  }
   }
     stage('7deploy2Prod'){
      deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://52.207.246.99:1978/')], contextPath: null, war: 'target/*war'
