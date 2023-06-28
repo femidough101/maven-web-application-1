@@ -35,7 +35,3 @@ Team SeariseTech.''', recipientProviders: [developers(), contributor(), upstream
   }
 }
 
-Thanks,
-Team SeariseTech.''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build Status', to: 'searisetech@gmail.com'
-  }
-}
