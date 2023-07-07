@@ -63,8 +63,3 @@ SeariseTech''', recipientProviders: [buildUser(), contributor(), developers()], 
    }
  }
 }
-
-SeariseTech''', recipientProviders: [buildUser(), contributor(), developers()], subject: 'build failed', to: 'yinkasoyemi101@gmail.com'
-   }
- }
-}
