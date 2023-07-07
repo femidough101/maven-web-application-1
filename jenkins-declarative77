@@ -1,0 +1,70 @@
+ pipeline{
+   agent {
+    label "terraformNode"
+ }
+ tools {
+   maven "maven3.9.2"
+ }
+ //options{}
+ //triggers{}
+ stages {
+   stage ('1clone'){
+     steps{
+         sh "echo 'cloning the lastet application version' "
+         git "https://github.com/femidough101/maven-web-application-1"
+         sh "echo 'latest application version available for testing and build' "
+      }
+   }
+   stage('2TestBuild'){
+      steps{
+        sh "echo 'running JUnit-test-cases' "
+        sh "echo 'testing must passed to create artifacts ' "
+        sh "mvn clean package"
+      }
+   }
+   stage('3CodeQualityAnalysis') {
+    steps{
+        sh "echo setup sonarQube authentication"
+        sh "echo 'Perfoming CodeQualityAnalysis' "
+        sh "mvn sonar:sonar"
+      }
+   }
+   stage('4UploadArtifacts') {
+    steps{
+      sh "echo configure nexus authentication"
+      //sh "mvn deploy"
+      sh "echo artifacts uploaded"
+      }
+   }
+    stage('5deploy') {
+    steps{
+      deploy adapters: [tomcat9(credentialsId: '65b82bef-00ea-4a5d-9ddd-e9384775d614', path: '', url: 'http://54.84.218.184:1978/')], contextPath: null, war: 'target/*war'
+      }    
+   }
+ }
+ post{
+   always{
+emailext body: '''The new software application developed by searisetech engineer for lamborghini project is succcessful
+Great job guys !!!
+
+SeariseTech''', recipientProviders: [buildUser(), contributor(), developers()], subject: 'build success', to: 'yinkasoyemi101@gmail.com'
+   }
+   success{
+emailext body: '''The new software application developed by searisetech engineer for lamborghini project is succcessful
+Great job guys !!!
+
+SeariseTech''', recipientProviders: [buildUser(), contributor(), developers()], subject: 'build success', to: 'yinkasoyemi101@gmail.com'
+   }
+   failure{
+emailext body: '''The new software application developed by searisetech engineer for lamborghini project is failed
+We need more hands to get the Job done Guy!!!
+
+SeariseTech''', recipientProviders: [buildUser(), contributor(), developers()], subject: 'build failed', to: 'yinkasoyemi101@gmail.com'
+   }
+ }
+}
+
+SeariseTech''', recipientProviders: [buildUser(), contributor(), developers()], subject: 'build failed', to: 'yinkasoyemi101@gmail.com'
+   }
+ }
+}
