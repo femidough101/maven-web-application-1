@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Searise Technologies Releases Nexus Repository</name>
-	      <url>http://100.27.198.136:8081/repository/freeman_releases/</url>
+	      <url>http://18.234.175.145:8081/repository/freeman_releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Searise Technologies Snapshot Nexus Repository </name>
-	      <url>http://100.27.198.136:8081/repository/freeman_snapshot/</url>
+	      <url>http://18.234.175.145:8081/repository/freeman_snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
