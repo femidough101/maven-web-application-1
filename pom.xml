@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Searise Technologies Releases Nexus Repository</name>
-	      <url>http://54.234.239.59:8081/repository/Lamborghini-releases/</url>
+	      <url>http://100.27.198.136:8081/repository/freeman_release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Searise Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.234.239.59:8081/repository/Lamborghini-snapshot/</url>
+	      <url>http://100.27.198.136:8081/repository/freeman_snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
